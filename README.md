@@ -1,7 +1,9 @@
 The [chickenpi project](https://github.com/Arghnews/chickenpi) has been running for years happily.
+
 However one issue with it is that the raspberry pi for it lives in a wooden hut in the garden.
 Wifi signal isn't strong enough to penetrate to the house where the router is.
 The network connection for said rpi has always been via powerline through a long wire that runs from the house to the hut.
+
 However, sometimes, particularly when there's a powercut, afterwards, the powerlines need resetting manually before they work again. Sometimes this occurs when the internet drops out too.
 
 If these powercuts go unnoticed, then the raspberrypi in the coop may not work and may not be noticed.
