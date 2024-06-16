@@ -1,0 +1,26 @@
+crontab -e
+
+@reboot /home/pi/on_reboot.sh
+
+# In on_reboot.sh
+# For pi in chickencoop
+set -u -o pipefail
+(
+sleep 2
+echo "From on_reboot.sh in /home/pi at $(date) starting tmux" >> /home/pi/log.txt
+tmux new-session -d -s sesh 'bash --init-file /home/pi/run_chickenpi_program.sh'
+echo "Started tmux" >> /home/pi/log.txt
+sleep 1
+) &
+disown
+
+
+# For pinging pi
+(
+sleep 30 # Wait for network to come up after reboot
+cd /home/pi/pinger
+python -u pinger.py --credentials_json credentials_live.json 2>&1 | tee log.txt
+) &
+disown
+
+
