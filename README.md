@@ -15,6 +15,6 @@ We can't have the raspberry pi itself tell us when its connection has failed, as
 So instead another rpi I have sitting around will run this little program, that will just constantly ping that raspberry pi, and if the connection drops for a sufficiently long time, will start sending sporadic emails to us to let us know.
 
 TODO:
-Work out a better way of deploying code updates here to the raspberry doing the polling, rather than me copying the files across
-Only issue with something that kills the current running python process is let's say we were 5 hours into failure and going to send an email at 6 hours, then we update and kill it, we don't track state outside of a run. Then again as I type this scenario is so unlikely and the only consequence is knowing 6 hours later, will just do that
-Should increase time.sleep polling interval from 1 second
+- Work out a better way of deploying code updates here to the raspberry doing the polling, rather than me copying the files across
+- Only issue with something that kills the current running python process is let's say we were 5 hours into failure and going to send an email at 6 hours, then we update and kill it, we don't track state outside of a run. Then again as I type this scenario is so unlikely and the only consequence is knowing 6 hours later, will just do that
+- Should increase time.sleep polling interval from 1 second
